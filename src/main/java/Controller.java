@@ -3,6 +3,8 @@ import spark.template.velocity.VelocityTemplateEngine;
 
 import javax.naming.Name;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import static spark.Spark.get;
@@ -16,16 +18,30 @@ public class Controller {
 
         staticFileLocation("/public");
 
+        NameRandomiser nameRandomiser = new NameRandomiser();
+
         get("/name_randomiser/1", (req, res) -> {
 
-            NameRandomiser nameRandomiser = new NameRandomiser();
             String name = nameRandomiser.oneName();
 
             HashMap<String, Object> model = new HashMap<>();
             model.put("name", name);
 
             model.put("template", "one_name.vtl");
-            return new ModelAndView(model, "template.vtl");
+            return new ModelAndView(model, "layout.vtl");
+
+        }, velocityTemplateEngine);
+
+
+        get("/name_randomiser/2", (req, res) -> {
+
+            ArrayList<String> names = nameRandomiser.twoNames();
+
+            HashMap<String, Object> model = new HashMap<>();
+            model.put("names", names);
+
+            model.put("template", "two_names.vtl");
+            return new ModelAndView(model, "layout.vtl");
 
         }, velocityTemplateEngine);
 
