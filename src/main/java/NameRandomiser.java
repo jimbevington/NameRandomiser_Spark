@@ -1,18 +1,12 @@
-import org.junit.Before;
-import org.junit.Test;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Random;
 
-public class TestNameRandomiser {
+public class NameRandomiser {
 
-    private NameRandomiser rand;
     private ArrayList<String> names;
 
-    @Before
-    public void setUp() throws Exception {
-        rand = new NameRandomiser();
-        names = new ArrayList<String>();
+    public NameRandomiser() {
+        this.names = new ArrayList<String>();
         names.add("Jim");
         names.add("Geraldine");
         names.add("Spencer");
@@ -29,9 +23,10 @@ public class TestNameRandomiser {
         names.add("Bratislav III");
     }
 
-    @Test
-    public void canGetName() {
-        String name = rand.oneName();
-        assert(names.contains(name));
+
+    public String oneName() {
+        int range = this.names.size();
+        Random rand = new Random();
+        return this.names.get(rand.nextInt(range));
     }
 }
