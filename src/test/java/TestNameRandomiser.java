@@ -51,4 +51,21 @@ public class TestNameRandomiser {
         assert(names.contains(name1));
         assert(names.contains(name2));
     }
+
+    @Test
+    public void canGetANumberOfNames__5() {
+        ArrayList<String> names5 = rand.getRandomNames(5);
+        assertEquals(5, names5.size());
+    }
+
+    @Test
+    public void canGetUniqueNames() {
+//        test this many times to make sure it works
+        for (int i = 0; i < 500; i++) {
+            ArrayList<String> names2 = rand.getRandomNames(2);
+            String name1 = names2.get(0);
+            String name2 = names2.get(1);
+            assertFalse(name1 == name2);
+        }
+    }
 }

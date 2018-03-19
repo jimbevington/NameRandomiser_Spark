@@ -54,4 +54,28 @@ public class NameRandomiser {
         return twoNames;
 
     }
+
+    public ArrayList<String> getRandomNames(int number) {
+
+        ArrayList<String> listOfNames = new ArrayList<>();
+
+//        until the list has the number of names specified
+        while (listOfNames.size() < number) {
+
+//            get a randomly selected name
+            int index = rand.nextInt(this.range);
+            String name = this.names.get(index);
+
+//            add name to the list if it isn't already there
+            if (!listOfNames.contains(name)) {
+                listOfNames.add(name);
+            }
+        }
+
+        return listOfNames;
+    }
+
+
+
+
 }
