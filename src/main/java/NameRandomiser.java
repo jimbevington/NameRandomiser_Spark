@@ -52,15 +52,13 @@ public class NameRandomiser {
 
         ArrayList<String> listOfNames = new ArrayList<>();
 
-//        until the list has the number of names specified
+//        until the list has the number of names specified ...
         while (listOfNames.size() < number) {
 
-//            get a randomly selected name
-//            int index = rand.nextInt(this.range);
-//            String name = this.names.get(index);
+//            ... get a random name
             String name = getName();
 
-//            add name to the list if it isn't already there
+//            ... add name to the list if it isn't already there
             if (!listOfNames.contains(name)) {
                 listOfNames.add(name);
             }
@@ -90,6 +88,18 @@ public class NameRandomiser {
     }
 
 
-
+//    WORK (OR THOUGHTS) IN PROGRESS ...
+//    public String formatList(ArrayList<String> nameList){
+//
+//        int penultimate = nameList.size() - 2;
+//
+//        String output = "";
+//
+//        for (String item : nameList){
+//            output.concat(item);
+//        }
+//
+//        return output;
+//    }
 
 }

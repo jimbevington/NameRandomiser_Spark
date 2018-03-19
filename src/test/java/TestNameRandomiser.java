@@ -15,6 +15,7 @@ public class TestNameRandomiser {
     @Before
     public void setUp() throws Exception {
         rand = new NameRandomiser();
+//        put all these names here for testing
         names = new ArrayList<String>();
         names.add("Jim");
         names.add("Geraldine");
@@ -68,4 +69,5 @@ public class TestNameRandomiser {
             assertFalse(name1 == name2);
         }
     }
+
 }
