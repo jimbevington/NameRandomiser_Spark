@@ -4,6 +4,9 @@ import org.junit.Test;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+
 public class TestNameRandomiser {
 
     private NameRandomiser rand;
@@ -33,5 +36,19 @@ public class TestNameRandomiser {
     public void canGetName() {
         String name = rand.oneName();
         assert(names.contains(name));
+    }
+
+    @Test
+    public void canGetTwoNames() {
+        ArrayList<String> twoNames = rand.twoNames();
+//        test there are 2 names
+        assertEquals(2, twoNames.size());
+        String name1 = twoNames.get(0);
+        String name2 = twoNames.get(1);
+//        test the names aren't the same
+        assertFalse(name1 == name2);
+//        test they are both in the names collection
+        assert(names.contains(name1));
+        assert(names.contains(name2));
     }
 }
