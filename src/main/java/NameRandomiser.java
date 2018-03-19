@@ -74,12 +74,12 @@ public class NameRandomiser {
 
         ArrayList<String> twoNames = new ArrayList<String>();
 
-        String name1 = this.names.get(rand.nextInt(range));
-        String name2 = this.names.get(rand.nextInt(range));
+        String name1 = getName();
+        String name2 = getName();
 
 //        until both names are different, regenerate the 2nd name
         while (name1 == name2) {
-            name2 = this.names.get(rand.nextInt(range));
+            name2 = getName();
         }
 
         twoNames.add(name1);

@@ -43,7 +43,7 @@ public class Controller {
 
 //        get("/name_randomiser/1", (req, res) -> {
 //
-//            String name = nameRandomiser.oneName();
+//            String name = nameRandomiser.getName();
 //
 //            HashMap<String, Object> model = new HashMap<>();
 //            model.put("name", name);
