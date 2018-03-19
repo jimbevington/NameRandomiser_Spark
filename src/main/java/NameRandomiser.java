@@ -29,7 +29,7 @@ public class NameRandomiser {
         this.rand = new Random();
     }
 
-    public int constrainInput(int number){
+    private int constrainInput(int number){
         if (number > this.range) {
             return this.range;
         }
@@ -37,6 +37,12 @@ public class NameRandomiser {
             return 1;
         }
         return number;
+    }
+
+    public String getName(){
+        int index = rand.nextInt(this.range);
+        String name = this.names.get(index);
+        return name;
     }
 
     public ArrayList<String> getRandomNames(int number) {
@@ -50,8 +56,9 @@ public class NameRandomiser {
         while (listOfNames.size() < number) {
 
 //            get a randomly selected name
-            int index = rand.nextInt(this.range);
-            String name = this.names.get(index);
+//            int index = rand.nextInt(this.range);
+//            String name = this.names.get(index);
+            String name = getName();
 
 //            add name to the list if it isn't already there
             if (!listOfNames.contains(name)) {
@@ -60,13 +67,6 @@ public class NameRandomiser {
         }
 
         return listOfNames;
-    }
-
-
-
-    public String oneName() {
-//        Random rand = new Random();
-        return this.names.get(rand.nextInt(this.range));
     }
 
 

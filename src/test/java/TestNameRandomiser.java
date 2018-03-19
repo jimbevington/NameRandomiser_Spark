@@ -34,7 +34,7 @@ public class TestNameRandomiser {
 
     @Test
     public void canGetName() {
-        String name = rand.oneName();
+        String name = rand.getName();
         assert(names.contains(name));
     }
 
