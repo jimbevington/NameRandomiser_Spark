@@ -1,0 +1,19 @@
+th, td {
+    text-align: center;
+    background-color: white;
+    padding: 15px;
+    border: solid 2px green;
+}
+
+body {
+    background-color: hotpink;
+}
+
+th {
+    font-family: 'Patua One', cursive;
+    font-weight: 200;
+}
+
+table {
+
+}
