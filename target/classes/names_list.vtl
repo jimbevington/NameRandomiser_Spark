@@ -1,3 +1,13 @@
-#foreach ($name in $names)
-    <h1>$name</h1>
-#end
+<table>
+
+    <tr>
+        <th>Todays lucky winners!</th>
+    </tr>
+
+    #foreach ($name in $names)
+    <tr>
+        <td>$name</td>
+    </tr>
+    #end
+
+</table>
